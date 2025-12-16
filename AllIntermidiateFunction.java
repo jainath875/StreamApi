@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class AllIntermidiateFunction {
@@ -43,5 +44,12 @@ public class AllIntermidiateFunction {
         numbers.stream()
                 .distinct()
                 .toList();
+
+        //sorted
+        List<String> words = Arrays.asList("apple", "banana", "kiwi", "cherry");
+        words.stream()
+                .sorted(Comparator.comparingInt(String::length).reversed())
+                .toList()
+                .forEach(System.out::println);
     }
 }
