@@ -36,5 +36,10 @@ public class TerminalFuntion {
         boolean b = list.stream()
                 .anyMatch(n -> n % 2 == 0);
         System.out.println(b);
+
+        // count
+        Long count = list.stream()
+                .count();
+        System.out.println(count);
     }
 }
