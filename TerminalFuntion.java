@@ -23,5 +23,12 @@ public class TerminalFuntion {
         Optional<Integer> max = list.stream()
                 .max(Comparator.naturalOrder());
         System.out.println(max.get());
+
+        // findFirst
+
+        Optional<Integer> findFirstEvenValue = list.stream()
+                .filter(n -> n % 2 == 0)
+                .findFirst();
+        System.out.println(findFirstEvenValue.get());
     }
 }
