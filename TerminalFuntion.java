@@ -41,5 +41,11 @@ public class TerminalFuntion {
         Long count = list.stream()
                 .count();
         System.out.println(count);
+
+        //sum
+        int sum = list.stream()
+                        .mapToInt(Integer::intValue)
+                        .sum();
+        System.out.println(sum);
     }
 }
