@@ -51,5 +51,11 @@ public class AllIntermidiateFunction {
                 .sorted(Comparator.comparingInt(String::length).reversed())
                 .toList()
                 .forEach(System.out::println);
+
+        //skip
+        numbers.stream()
+                .skip(2)
+                .toList()
+                .forEach(System.out::println);
     }
 }
