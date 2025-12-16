@@ -21,5 +21,9 @@ public class CreateStreams {
         //Stream generate
 
         Stream<Double> doubleStream = Stream.generate(Math::random).limit(5);
+
+        //object -> stream
+        Integer[] objectArray = {12, 22, 33, 3, 4};
+        Stream<Integer> s = Stream.of(objectArray);
     }
 }
