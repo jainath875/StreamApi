@@ -45,17 +45,22 @@ public class AllIntermidiateFunction {
                 .distinct()
                 .toList();
 
-        //sorted
+        // sorted
         List<String> words = Arrays.asList("apple", "banana", "kiwi", "cherry");
         words.stream()
                 .sorted(Comparator.comparingInt(String::length).reversed())
                 .toList()
                 .forEach(System.out::println);
 
-        //skip
+        // skip
         numbers.stream()
                 .skip(2)
                 .toList()
+                .forEach(System.out::println);
+
+        // limit
+        numbers.stream()
+                .limit(3)
                 .forEach(System.out::println);
     }
 }
