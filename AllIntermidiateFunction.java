@@ -38,5 +38,10 @@ public class AllIntermidiateFunction {
                 .map(n -> n * n)
                 .peek(System.out::println)
                 .toList();
+
+        // distinct
+        numbers.stream()
+                .distinct()
+                .toList();
     }
 }
