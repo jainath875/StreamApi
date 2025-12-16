@@ -17,7 +17,7 @@ public class AllIntermidiateFunction {
                 .map(String::toUpperCase)
                 .forEach(System.out::println);
 
-        // reduce
+        // reduce --> Terminal Operation
         Integer sum = numbers.stream()
                 .reduce(0, (a, b) -> a + b);
         System.out.println(sum);
