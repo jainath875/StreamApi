@@ -22,16 +22,21 @@ public class AllIntermidiateFunction {
                 .reduce(0, (a, b) -> a + b);
         System.out.println(sum);
 
-        //flatMap
+        // flatMap
         List<List<String>> listOfLists = Arrays.asList(
-                                            Arrays.asList("a", "b"),
-                                            Arrays.asList("c", "d"),
-                                            Arrays.asList("e", "f")
-                                            );
-                                            
+                Arrays.asList("a", "b"),
+                Arrays.asList("c", "d"),
+                Arrays.asList("e", "f"));
+
         listOfLists.stream()
-                    .flatMap(list -> list.stream()) //Collection::stream
-                    .map(String::toUpperCase)
-                    .forEach(System.out::println);
+                .flatMap(list -> list.stream()) // Collection::stream
+                .map(String::toUpperCase)
+                .forEach(System.out::println);
+
+        // peek (it doesn't modified the original stream)
+        numbers.stream()
+                .map(n -> n * n)
+                .peek(System.out::println)
+                .toList();
     }
 }
