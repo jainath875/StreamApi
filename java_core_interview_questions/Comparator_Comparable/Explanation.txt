@@ -1,0 +1,31 @@
+In Java, both Comparable and Comparator are interfaces used to sort objects, but they serve different purposes. Think of Comparable as the "natural" way an object sorts itself, while Comparator is an "external" tool used to sort objects in various ways.
+
+
+I would love to! Chaining comparators is one of the most powerful features introduced in Java 8. It allows you to build complex sorting logic that reads almost like a plain English sentence.
+
+Instead of writing messy nested if-else blocks inside a single compare method, you can use the .thenComparing() method.
+
+Example: Sorting by Name, then Age
+Imagine you have several students named "Alice." You want all the "Alices" to appear together, but you want the 20-year-old Alice to appear before the 25-year-old Alice.
+
+Java
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        List<Student> students = Arrays.asList(
+            new Student("Alice", 25),
+            new Student("Bob", 20),
+            new Student("Alice", 20)
+        );
+
+        // Chain the comparators
+        students.sort(
+            Comparator.comparing(Student::getName)
+                      .thenComparing(Student::getAge)
+        );
+
+        students.forEach(System.out;::println);
+    }
+}
