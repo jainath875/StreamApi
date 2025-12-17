@@ -30,9 +30,30 @@ public class EasyStreamCode {
         // find first element greater than 10
         List<Integer> num = Arrays.asList(1, 2, 21, 55, 5, 61, 17, 8, 9, 10);
         Optional<Integer> firstNumberGreaterThanTen = num.stream()
-                                                        .filter(n -> n > 10)
-                                                        .sorted()
-                                                        .findFirst();
+                .filter(n -> n > 10)
+                .sorted()
+                .findFirst();
         firstNumberGreaterThanTen.ifPresent(n -> System.out.println("First number greater than 10: " + n));
+
+        // sum of number
+        int sum = num.stream()
+                .reduce(0, (a, b) -> a + b);
+        System.out.println("Sum of numbers: " + sum);
+
+        // find max
+
+        Optional<Integer> max = num.stream()
+                .max((a, b) -> a.compareTo(b));
+        // reduce(Integer::max)
+
+        System.out.println("Max number: " + max.get());
+
+        // sum of squares of even numbers
+        Integer sumOfEvenSquares = num.stream()
+                .filter(n -> n % 2 == 0)
+                .map(n -> n * n)
+                .reduce(0, (a, b) -> a + b);
+
+        System.out.println("Sum of squares of even numbers: " + sumOfEvenSquares);
     }
 }
