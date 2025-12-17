@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class EasyStreamCode {
@@ -25,5 +26,10 @@ public class EasyStreamCode {
                 .map(n -> n * n)
                 .collect(Collectors.toList());
         System.out.println("Even Numbers Squared: " + evenNumbersSqured);
+
+        // find first element greater than 10
+        List<Integer> num = Arrays.asList(1, 2, 2, 5, 5, 61, 7, 8, 9, 10);
+        Optional<Integer> firstNumberGreaterThanTen = num.stream().filter(n -> n > 10).findFirst();
+        firstNumberGreaterThanTen.ifPresent(n -> System.out.println("First number greater than 10: " + n));
     }
 }
