@@ -18,5 +18,12 @@ public class EasyStreamCode {
                 .map(n -> n * n)
                 .toList();
         System.out.println("Squared Numbers: " + squaredNumbers);
+
+        // Square even number from a list
+        List<Integer> evenNumbersSqured = numbers.stream()
+                .filter(n -> n % 2 == 0)
+                .map(n -> n * n)
+                .collect(Collectors.toList());
+        System.out.println("Even Numbers Squared: " + evenNumbersSqured);
     }
 }
