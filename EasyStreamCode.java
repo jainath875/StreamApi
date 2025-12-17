@@ -4,13 +4,19 @@ import java.util.stream.Collectors;
 
 public class EasyStreamCode {
     public static void main(String[] args) {
-        //filter even number from a list
+        // filter even number from a list
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
         List<Integer> evenNumbers = numbers.stream()
-		                .filter(n -> n%2 == 0)
-		                .collect(Collectors.toList());
+                .filter(n -> n % 2 == 0)
+                .collect(Collectors.toList());
 
         System.out.println("Even Numbers: " + evenNumbers);
+
+        // filter number to their squares
+        List<Integer> squaredNumbers = numbers.stream()
+                .map(n -> n * n)
+                .toList();
+        System.out.println("Squared Numbers: " + squaredNumbers);
     }
 }
