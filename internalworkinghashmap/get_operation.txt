@@ -1,0 +1,51 @@
+main operation hash and equals.
+
+Q) what data structure HashMap returns
+    --HashTable data structure
+
+Q)Which datastructure is used to implement HashMap in java
+    --Array and LinkedList
+
+Q)Is HashMap thread-safe in Java?
+    --No, HashMap is not thread-safe.
+    --multiple Threads can use our HashMap object simultaneously.
+
+Q)What Happen if you use HashMap in a multithreaded Java application
+    --when multiple Threads try to access the HashMap at same time then they try to modify data at same time.
+
+Q)How do you remove a mapping while iterating over HashMap in java?
+    --remove() of iterator
+    code:
+        Iterator itr = map.entrySet().iterator();
+
+        while(itr.hasNext()) {
+            Map.Entry current = itr.next();
+            if(current.getKey().equals("Matching")) {
+                itr.remove();
+            }
+        }
+
+Q)What is loadfactor in HashMap?
+    --Number that control resizing of the HashMap(Table or Buckets).
+    --initial value 0.75
+
+Q)How many entries you can store in HashMap? What is the maximum limit?
+    --No limit for HashMap
+     size() return int
+     JDK 8 resolve by adding mappingCount() return long value.
+
+Q)what is the difference between the capacity and size of HashMap in Java?
+    --capacity: How many entries HashMap can store.
+    --size: entries currently present.
+
+Q)What is ConcurrentHashMap in java?
+    --A Map implementation, Which can be safely used in a concurrent and multithreaded Java Program.
+
+Q)what is the difference between HashTable and ConcurrentHashMap in Java?
+    --Performance and Scalability of ConcurrentHashMap is high as Compared to HashTable.
+    --ConcurrentHashMap-> Segment level locking
+    --HashTable -> Whole object is locked
+
+Note:
+    keys can't be duplicate, values can be duplicate
+    --when multiple thread have same Map object and try to do operation at same time then ConncurrentModificationException occur.
