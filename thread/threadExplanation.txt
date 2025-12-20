@@ -1,0 +1,9 @@
+Q) what are the ways of creating thread in java
+    --By implementing Runnable interface
+    --By Extending Thread class
+
+Q) which is a Better way 
+    --implementing Runnable
+
+Q run() vs start()
+--The difference is that Thread.start() creats a new thread and call run method while Runnable.run() just calls the run() method on the current thread.
