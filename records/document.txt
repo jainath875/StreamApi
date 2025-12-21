@@ -1,0 +1,17 @@
+--Both Lombok and records helps us to reduce boilerplate code
+--records -> Immutable date carrier in java, this class is only about data, Nothing else.
+
+public record UserDto(Long id,
+                    String name,
+                    String email) {
+
+                    }
+
+--in record
+    -all variable are by default private final
+    -by default parameterized constructor is there
+    -by default equals(), hashCode() and toString() method is there.
+
+    --there are no setters and mutable state.
+    --records don't just reduce boilerplate, they forces better design.
+    --records cannot extend other class. 
