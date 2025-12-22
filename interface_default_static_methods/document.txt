@@ -1,0 +1,5 @@
+--interface default and static methods
+--java 8
+--default methods provide default implementation for implemented classes.
+--child class need not to provide implementation for default methods
+--but if you want you can override the default methods
